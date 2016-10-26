@@ -9,7 +9,8 @@ AM_INIT_AUTOMAKE([foreign subdir-objects -Wall])
 # Checks for programs.
 AC_PROG_CC_C99
 AC_PROG_RANLIB
-AM_PROG_AR
+# Workaround for Automake < 1.11.2.  DO NOT MERGE WITH MASTER.
+m4_ifdef([AM_PROG_AR], [AM_PROG_AR])
 
 # Don't rebuild the configure script.  I'm distributing a perfectly good one.
 AM_MAINTAINER_MODE
